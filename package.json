@@ -1,0 +1,20 @@
+{
+  "name": "shopping_site_single_user",
+  "version": "1.0.0",
+  "description": "",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "author": "Rahul Agarwal",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.17.1",
+    "mysql2": "^1.6.5",
+    "sequelize": "^5.9.4"
+  },
+  "engines":{
+    "node":"10",
+    "npm":"6"
+  }
+}
