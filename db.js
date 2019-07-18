@@ -1,7 +1,7 @@
 const mysql2=require('mysql2')
 const sequelize=require('sequelize');
-const db=new sequelize('shopping','shopuser','webinar14',{
-    host:'production',
+const db=new sequelize('sql12299005','sql12299005','JstrwZIlrG',{
+    host:'sql12.freemysqlhosting.net',
     dialect:'mysql',
     pool:{
         min:0,
@@ -10,10 +10,10 @@ const db=new sequelize('shopping','shopuser','webinar14',{
 })
 
 const connection = mysql2.createConnection({
-    host: 'production',
-    database: 'shopping',
-    user: 'shopuser',
-    password: 'webinar14'
+    host: 'sql12.freemysqlhosting.net',
+    database: 'sql12299005',
+    user: 'sql12299005',
+    password: 'JstrwZIlrG'
 })
 function remove_data(id){
     const suc="REMOVED SUCCESSFULLY";
