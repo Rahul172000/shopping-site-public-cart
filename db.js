@@ -1,7 +1,7 @@
 const mysql2=require('mysql2')
 const sequelize=require('sequelize');
 const db=new sequelize('shopping','shopuser','webinar14',{
-    host:'localhost',
+    host:'production',
     dialect:'mysql',
     pool:{
         min:0,
