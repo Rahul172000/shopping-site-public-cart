@@ -10,7 +10,7 @@ const db=new sequelize('shopping','shopuser','webinar14',{
 })
 
 const connection = mysql2.createConnection({
-    host: 'localhost',
+    host: 'production',
     database: 'shopping',
     user: 'shopuser',
     password: 'webinar14'
