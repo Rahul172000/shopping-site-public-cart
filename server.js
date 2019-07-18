@@ -7,7 +7,7 @@ const server_port=process.env.PORT||1111
 server.use(express.json());
 server.use(express.urlencoded({extended:true}));
 server.use('/',express.static(__dirname+'/public/home_shop'));
-server.use('https://shopping-site-public-cart.herokuapp.com//cartpage',express.static(__dirname+'/public/cart'))
+server.use('/shopping-site-public-cart.herokuapp.com/cartpage',express.static(__dirname+'/public/cart'))
 server.get('/allprod',function(req,res){
     prod_db.findAll()
     .then(data=>{
