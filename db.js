@@ -9,22 +9,29 @@ const db=new sequelize('sql12299005','sql12299005','JstrwZIlrG',{
     }
 })
 
-const connection = mysql2.createConnection({
+/*const connection = mysql2.createConnection({
     host: 'sql12.freemysqlhosting.net',
     database: 'sql12299005',
     user: 'sql12299005',
     password: 'JstrwZIlrG'
-})
+})*/
 function remove_data(id){
     const suc="REMOVED SUCCESSFULLY";
     const fail="CANNOT BE REMOVED...TRY AGAIN LATER";
     let msg;
-    connection.query(
+    cart.destroy({
+        where:{
+            id:id
+        }
+    })
+    .then(()=>{return "done";})
+    .catch((err)=>{return err;})
+    /*connection.query(
         `DELETE FROM carts WHERE id=${id}`,
         function(err,result){
 
         }
-    )
+    )*/
 }
 const products=db.define('products',{
     id:{
