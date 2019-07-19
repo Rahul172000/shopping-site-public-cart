@@ -2,7 +2,6 @@ const express=require('express');
 const server=express();
 const prod_db=require('./db.js').products
 const cart_db=require('./db.js').cart
-const remove=require('./db.js').remove_data
 const server_port=process.env.PORT||1111
 server.use(express.json());
 server.use(express.urlencoded({extended:true}));
@@ -52,9 +51,14 @@ server.post('/addtocart',function(req,res){
     })
     .catch(err=>{res.send("PRODUCT CANNOT BE ADDED TO CART")})
 })
-server.post('/removefromcart',function(req,res){
-    console.log(remove(req.body.id));
-    res.send("done");
+server.delete('/removefromcart',function(req,res){
+    cart_db.destroy({
+        where:{
+            id:req.body.id
+        }
+    })
+    .then(()=>{res.send ("done");})
+    .catch((err)=>{res.send ("fail");})
     /*cart_db.destroy({
         where:{
             id:req.query.id,

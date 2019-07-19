@@ -15,24 +15,6 @@ const db=new sequelize('sql12299005','sql12299005','JstrwZIlrG',{
     user: 'sql12299005',
     password: 'JstrwZIlrG'
 })*/
-function remove_data(id){
-    const suc="REMOVED SUCCESSFULLY";
-    const fail="CANNOT BE REMOVED...TRY AGAIN LATER";
-    let msg;
-    cart.destroy({
-        where:{
-            id:id
-        }
-    })
-    .then(()=>{return "done";})
-    .catch((err)=>{return err;})
-    /*connection.query(
-        `DELETE FROM carts WHERE id=${id}`,
-        function(err,result){
-
-        }
-    )*/
-}
 const products=db.define('products',{
     id:{
         type:sequelize.INTEGER,
@@ -74,5 +56,5 @@ const cart=db.define('cart',{
 db.sync()
 .then(()=>console.log('database created'))
 module.exports={
-    products,cart,remove_data
+    products,cart
 }

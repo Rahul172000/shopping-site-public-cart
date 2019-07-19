@@ -29,20 +29,12 @@ $(function(){
             $(this).click(function(){
                 let id=$(this).val();
                 console.log("clicked")
-                $.get(
-                    '/findprod',
-                    {id:id},
-                    function(product){
-                        $.post(
-                            '/removefromcart',
-                            {
-                                id:product.id,
-                            },
-                            function(result){
-                            }
-                        )
-                    }
-                )
+                $.ajax({
+                    url:'/removefromcart',
+                    type:"DELETE",
+                    data:{id:id},
+                    success:function(result){}
+                })
             })
         })
     })
